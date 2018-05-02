@@ -4,10 +4,13 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.jsx',
+  entry: {
+      'index': './src/index.jsx',
+      'whatwg-fetch': 'whatwg-fetch'
+  },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+      filename: '[name].bundle.js',
+      path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
